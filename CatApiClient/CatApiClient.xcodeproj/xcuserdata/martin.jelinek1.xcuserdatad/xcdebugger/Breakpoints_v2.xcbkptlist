@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "34403BCC-D46D-453F-858A-26C615434296"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF5710DF-C865-4338-958B-5113BCA564E1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CatApiClient/Scenes/CatListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "CatListView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "DF5710DF-C865-4338-958B-5113BCA564E1 - e2a5139cec371810"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of CatApiClient.CatListView.cats : Swift.Array&lt;CatApiClient.Cat&gt;"
+                  moduleName = "CatApiClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martin.jelinek1/Documents/cat-api-client/CatApiClient/CatApiClient/Scenes/CatListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "DF5710DF-C865-4338-958B-5113BCA564E1 - 825c9310f785c47d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatApiClient.CatListView.cats.getter : Swift.Array&lt;CatApiClient.Cat&gt;"
+                  moduleName = "CatApiClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martin.jelinek1/Documents/cat-api-client/CatApiClient/CatApiClient/Scenes/CatListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "162">
+               </Location>
+               <Location
+                  uuid = "DF5710DF-C865-4338-958B-5113BCA564E1 - 16933a7620ea4941"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatApiClient.CatListView.cats.setter : Swift.Array&lt;CatApiClient.Cat&gt;"
+                  moduleName = "CatApiClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martin.jelinek1/Documents/cat-api-client/CatApiClient/CatApiClient/Scenes/CatListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "139">
+               </Location>
+               <Location
+                  uuid = "DF5710DF-C865-4338-958B-5113BCA564E1 - ebfae5f41c6b7542"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatApiClient.CatListView.cats.modify : Swift.Array&lt;CatApiClient.Cat&gt;"
+                  moduleName = "CatApiClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martin.jelinek1/Documents/cat-api-client/CatApiClient/CatApiClient/Scenes/CatListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "214">
+               </Location>
+               <Location
+                  uuid = "DF5710DF-C865-4338-958B-5113BCA564E1 - 31d88909c10a7029"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatApiClient.CatListView.cats.modify : Swift.Array&lt;CatApiClient.Cat&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CatApiClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martin.jelinek1/Documents/cat-api-client/CatApiClient/CatApiClient/Scenes/CatListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "53">
+               </Location>
+               <Location
+                  uuid = "DF5710DF-C865-4338-958B-5113BCA564E1 - e2f06e1684297429"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatApiClient.CatListView.$cats.getter : SwiftUI.Binding&lt;Swift.Array&lt;CatApiClient.Cat&gt;&gt;"
+                  moduleName = "CatApiClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martin.jelinek1/Documents/cat-api-client/CatApiClient/CatApiClient/Scenes/CatListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "202">
+               </Location>
+               <Location
+                  uuid = "DF5710DF-C865-4338-958B-5113BCA564E1 - a4cc230da7c5c231"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CatApiClient.CatListView.init() -&gt; CatApiClient.CatListView"
+                  moduleName = "CatApiClient"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/martin.jelinek1/Documents/cat-api-client/CatApiClient/CatApiClient/Scenes/CatListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
