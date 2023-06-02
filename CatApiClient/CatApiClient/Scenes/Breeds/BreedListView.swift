@@ -9,24 +9,28 @@ import SwiftUI
 
 struct BreedListView: View {
     
-    @StateObject var viewModel: BreedsListViewModel
+    @StateObject var viewModel: BreedListViewModel
     
     var body: some View {
-        makeBreedListView(viewModel: viewModel)
+        makeBreedListView(viewModel: viewModel).onFirstAppear {
+            Task {
+                await viewModel.fetch()
+            }
+        }
     }
 }
 
 private extension BreedListView {
     
-    func makeBreedListView(viewModel: BreedsListViewModel) -> some View {
+    func makeBreedListView(viewModel: BreedListViewModel) -> some View {
         ScrollView {
             switch viewModel.state {
             case .initial, .loading:
                 ProgressView()
-            case .featched(let breeds):
+            case .fetched(let breeds):
                 LazyVStack {
                     ForEach(breeds) { breed in
-                        NavigationLink(destination: BreedDetailView(breed: breed)) {
+                        NavigationLink(destination: BreedDetailView(viewModel: BreedDetailViewModel())) {
                             makeBreedListItem(catBreed: breed)
                         }
                     }
@@ -37,12 +41,12 @@ private extension BreedListView {
         }
     }
     
-    func makeBreedListItem(catBreed: Breed) -> some View {
+    func makeBreedListItem(catBreed: BreedImage) -> some View {
         ScrollView {
             Group {
                 LazyVStack {
-                    NavigationLink(destination: BreedDetailView(breed: catBreed)) {
-                        BreedListItemView(breed: catBreed)
+                    NavigationLink(destination: BreedDetailView(viewModel: BreedDetailViewModel())) {
+                        BreedListItemView(breedImage: catBreed)
                     }
                 }
                 .padding(16)

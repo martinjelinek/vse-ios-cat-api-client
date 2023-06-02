@@ -8,25 +8,35 @@
 import SwiftUI
 
 struct BreedDetailView: View {
-    let breed: Breed
+    @StateObject var viewModel: BreedDetailViewModel
     
     var body: some View {
         ZStack {
             BackgroundGradientView()
-            VStack {
-                makeImage(url: breed.imageUrl)
-                Text(breed.name)
-                    .font(.title)
-                
-                Text(breed.description)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                
-                Spacer()
+            ScrollView {
+                VStack {
+                    switch viewModel.state {
+                    case .initial, .loading:
+                        ProgressView()
+                    case .fetched:
+                        if let breedImage = viewModel.breed {
+                            makeImage(url: breedImage.url)
+                            makeInfo(breedImage: breedImage)
+                        }
+                    case .failed:
+                        Text("Something went wrong")
+                    }
+
+                }
             }
             .padding(16)
         }
-        .navigationTitle(breed.name)
+        .navigationTitle("")
+        .onFirstAppear {
+            Task {
+                await viewModel.fetch()
+            }
+        }
     }
 }
 
@@ -41,5 +51,16 @@ private extension BreedDetailView {
             ProgressView()
         }
         .frame(maxWidth: .infinity)
+    }
+    
+    func makeInfo(breedImage: BreedImage) -> some View {
+        VStack {
+            Text(breedImage.id)
+                .font(.title)
+            Text(breedImage.id)
+                .font(.subheadline)
+                .foregroundColor(.gray)
+            Spacer()
+        }
     }
 }

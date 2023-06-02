@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct BreedListItemView: View {
-    let breed: Breed
+    let breedImage: BreedImage
     
     var body: some View {
         HStack {
-            makeImage(url: breed.imageUrl)
+            makeImage(url: breedImage.url)
             VStack {
-                Text(breed.name)
+                Text(breedImage.id)
                     .font(.title)
                 
-                Text(breed.description)
+                Text(breedImage.id)
                     .font(.subheadline)
                     .foregroundColor(.gray)
                 
                 Spacer()
-                Spacer ()
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

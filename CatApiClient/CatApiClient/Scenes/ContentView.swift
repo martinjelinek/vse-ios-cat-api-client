@@ -14,7 +14,7 @@ struct ContentView: View {
             ZStack {
                 BackgroundGradientView()
                 BreedListView(
-                    viewModel: BreedsListViewModel()
+                    viewModel: BreedListViewModel()
                 )
             }
         }
