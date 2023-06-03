@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum APIError: Error {
+    case unaccaptableStatusCode
+    case decodingFailed
+    case invalidURLComponents
+}

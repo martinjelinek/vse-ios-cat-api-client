@@ -19,17 +19,22 @@
 		8535F0D02A256C6900CCD077 /* CatApiClientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0CF2A256C6900CCD077 /* CatApiClientUITestsLaunchTests.swift */; };
 		8535F0E92A26B39300CCD077 /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0E82A26B39300CCD077 /* Color+App.swift */; };
 		8535F0EB2A26B4A500CCD077 /* BreedListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0EA2A26B4A500CCD077 /* BreedListItemView.swift */; };
-		8535F0EF2A26B51A00CCD077 /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0EE2A26B51A00CCD077 /* BreedImage.swift */; };
+		8535F0EF2A26B51A00CCD077 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0EE2A26B51A00CCD077 /* Breed.swift */; };
 		8535F0F32A26C83A00CCD077 /* BackgroudGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0F22A26C83A00CCD077 /* BackgroudGradientView.swift */; };
 		85DEDCE62A295A01002E56B8 /* OnFirstAppearViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCE52A295A01002E56B8 /* OnFirstAppearViewModifier.swift */; };
 		85DEDCE82A2962D2002E56B8 /* BreedDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCE72A2962D2002E56B8 /* BreedDetailViewModel.swift */; };
 		85DEDCEB2A297350002E56B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCEA2A297350002E56B8 /* Constants.swift */; };
 		85DEDCEE2A298B7C002E56B8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCED2A298B7C002E56B8 /* APIManager.swift */; };
-		85DEDCF02A2990F1002E56B8 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCEF2A2990F1002E56B8 /* Response.swift */; };
 		85DEDCF22A2990FF002E56B8 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCF12A2990FF002E56B8 /* APIError.swift */; };
 		85DEDCF42A299108002E56B8 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCF32A299108002E56B8 /* Endpoint.swift */; };
 		85DEDCF62A299117002E56B8 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCF52A299117002E56B8 /* HTTPMethod.swift */; };
 		85DEDCF82A299123002E56B8 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCF72A299123002E56B8 /* HTTPHeader.swift */; };
+		85DEDCFB2A2A68DF002E56B8 /* BreedEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCFA2A2A68DF002E56B8 /* BreedEndpoint.swift */; };
+		85DEDCFD2A2A78BC002E56B8 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCFC2A2A78BC002E56B8 /* DIContainer.swift */; };
+		85DEDCFF2A2A8884002E56B8 /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDCFE2A2A8884002E56B8 /* BreedImage.swift */; };
+		85DEDD012A2AC0F1002E56B8 /* URL+Convinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDD002A2AC0F1002E56B8 /* URL+Convinience.swift */; };
+		85DEDD042A2AC200002E56B8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDD032A2AC200002E56B8 /* Logger.swift */; };
+		85DEDD062A2AD35A002E56B8 /* BreedImageEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDD052A2AD35A002E56B8 /* BreedImageEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,17 +71,22 @@
 		8535F0CF2A256C6900CCD077 /* CatApiClientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatApiClientUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8535F0E82A26B39300CCD077 /* Color+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
 		8535F0EA2A26B4A500CCD077 /* BreedListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListItemView.swift; sourceTree = "<group>"; };
-		8535F0EE2A26B51A00CCD077 /* BreedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
+		8535F0EE2A26B51A00CCD077 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 		8535F0F22A26C83A00CCD077 /* BackgroudGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroudGradientView.swift; sourceTree = "<group>"; };
 		85DEDCE52A295A01002E56B8 /* OnFirstAppearViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppearViewModifier.swift; sourceTree = "<group>"; };
 		85DEDCE72A2962D2002E56B8 /* BreedDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailViewModel.swift; sourceTree = "<group>"; };
 		85DEDCEA2A297350002E56B8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		85DEDCED2A298B7C002E56B8 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		85DEDCEF2A2990F1002E56B8 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		85DEDCF12A2990FF002E56B8 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		85DEDCF32A299108002E56B8 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		85DEDCF52A299117002E56B8 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		85DEDCF72A299123002E56B8 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
+		85DEDCFA2A2A68DF002E56B8 /* BreedEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedEndpoint.swift; sourceTree = "<group>"; };
+		85DEDCFC2A2A78BC002E56B8 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		85DEDCFE2A2A8884002E56B8 /* BreedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
+		85DEDD002A2AC0F1002E56B8 /* URL+Convinience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Convinience.swift"; sourceTree = "<group>"; };
+		85DEDD032A2AC200002E56B8 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		85DEDD052A2AD35A002E56B8 /* BreedImageEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +137,7 @@
 		8535F0B02A256C6500CCD077 /* CatApiClient */ = {
 			isa = PBXGroup;
 			children = (
+				85DEDD022A2AC1F4002E56B8 /* Logger */,
 				85DEDCEC2A298B5B002E56B8 /* API */,
 				85DEDCE42A2959CE002E56B8 /* Utils */,
 				8535F0EC2A26B4FE00CCD077 /* Model */,
@@ -220,7 +231,8 @@
 		8535F0ED2A26B50800CCD077 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				8535F0EE2A26B51A00CCD077 /* BreedImage.swift */,
+				8535F0EE2A26B51A00CCD077 /* Breed.swift */,
+				85DEDCFE2A2A8884002E56B8 /* BreedImage.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -248,6 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				85DEDCE52A295A01002E56B8 /* OnFirstAppearViewModifier.swift */,
+				85DEDCFC2A2A78BC002E56B8 /* DIContainer.swift */,
+				85DEDD002A2AC0F1002E56B8 /* URL+Convinience.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -255,14 +269,31 @@
 		85DEDCEC2A298B5B002E56B8 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				85DEDCF92A2A68C7002E56B8 /* Endpoints */,
 				85DEDCED2A298B7C002E56B8 /* APIManager.swift */,
-				85DEDCEF2A2990F1002E56B8 /* Response.swift */,
 				85DEDCF12A2990FF002E56B8 /* APIError.swift */,
 				85DEDCF32A299108002E56B8 /* Endpoint.swift */,
 				85DEDCF52A299117002E56B8 /* HTTPMethod.swift */,
 				85DEDCF72A299123002E56B8 /* HTTPHeader.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		85DEDCF92A2A68C7002E56B8 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				85DEDCFA2A2A68DF002E56B8 /* BreedEndpoint.swift */,
+				85DEDD052A2AD35A002E56B8 /* BreedImageEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		85DEDD022A2AC1F4002E56B8 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				85DEDD032A2AC200002E56B8 /* Logger.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,20 +428,25 @@
 			files = (
 				85DEDCF82A299123002E56B8 /* HTTPHeader.swift in Sources */,
 				8535F0B42A256C6500CCD077 /* ContentView.swift in Sources */,
-				8535F0EF2A26B51A00CCD077 /* BreedImage.swift in Sources */,
+				8535F0EF2A26B51A00CCD077 /* Breed.swift in Sources */,
 				850643952A294B2800CD0412 /* BreedDetailView.swift in Sources */,
 				85DEDCE82A2962D2002E56B8 /* BreedDetailViewModel.swift in Sources */,
 				8535F0EB2A26B4A500CCD077 /* BreedListItemView.swift in Sources */,
 				85DEDCEE2A298B7C002E56B8 /* APIManager.swift in Sources */,
-				85DEDCF02A2990F1002E56B8 /* Response.swift in Sources */,
 				8535F0E92A26B39300CCD077 /* Color+App.swift in Sources */,
+				85DEDD042A2AC200002E56B8 /* Logger.swift in Sources */,
 				85DEDCF22A2990FF002E56B8 /* APIError.swift in Sources */,
 				850643972A294EC300CD0412 /* BreedListView.swift in Sources */,
 				85DEDCF42A299108002E56B8 /* Endpoint.swift in Sources */,
+				85DEDCFD2A2A78BC002E56B8 /* DIContainer.swift in Sources */,
 				85DEDCE62A295A01002E56B8 /* OnFirstAppearViewModifier.swift in Sources */,
+				85DEDCFB2A2A68DF002E56B8 /* BreedEndpoint.swift in Sources */,
+				85DEDCFF2A2A8884002E56B8 /* BreedImage.swift in Sources */,
+				85DEDD062A2AD35A002E56B8 /* BreedImageEndpoint.swift in Sources */,
 				85DEDCF62A299117002E56B8 /* HTTPMethod.swift in Sources */,
 				8535F0F32A26C83A00CCD077 /* BackgroudGradientView.swift in Sources */,
 				8535F0B22A256C6500CCD077 /* CatApiClientApp.swift in Sources */,
+				85DEDD012A2AC0F1002E56B8 /* URL+Convinience.swift in Sources */,
 				850643992A2957B600CD0412 /* BreedListViewModel.swift in Sources */,
 				85DEDCEB2A297350002E56B8 /* Constants.swift in Sources */,
 			);

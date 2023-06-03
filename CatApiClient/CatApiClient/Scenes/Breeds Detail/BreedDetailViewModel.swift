@@ -16,18 +16,22 @@ import Foundation
         case failed
     }
     
-    var id: Int?
+    var id: String?
     @Published var state: State = .initial
-    @Published var breed: BreedImage?
+    @Published var breed: Breed?
     
-    nonisolated init(id: Int? = nil) {
+    nonisolated init(id: String? = nil) {
         self.id = id
+    }
+    
+    func load() async {
+        state = .loading
+        await fetch()
     }
     
     func fetch() async {
         state = .loading
-        try! await Task.sleep(for: .seconds(2))
         state = .fetched
-        breed = BreedImage.mock
+        breed = Breed.mock
     }
 }

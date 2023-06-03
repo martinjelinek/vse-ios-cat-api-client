@@ -14,7 +14,7 @@ struct BreedListView: View {
     var body: some View {
         makeBreedListView(viewModel: viewModel).onFirstAppear {
             Task {
-                await viewModel.fetch()
+                await viewModel.load()
             }
         }
     }
@@ -27,30 +27,23 @@ private extension BreedListView {
             switch viewModel.state {
             case .initial, .loading:
                 ProgressView()
-            case .fetched(let breeds):
-                LazyVStack {
-                    ForEach(breeds) { breed in
-                        NavigationLink(destination: BreedDetailView(viewModel: BreedDetailViewModel())) {
-                            makeBreedListItem(catBreed: breed)
-                        }
-                    }
-                }
+            case .fetched:
+                makeBreedList()
             case .failed:
                 Text("Something went wrong")
             }
         }
     }
     
-    func makeBreedListItem(catBreed: BreedImage) -> some View {
-        ScrollView {
-            Group {
-                LazyVStack {
-                    NavigationLink(destination: BreedDetailView(viewModel: BreedDetailViewModel())) {
-                        BreedListItemView(breedImage: catBreed)
-                    }
+    func makeBreedList() -> some View {
+        LazyVStack {
+            ForEach(viewModel.breeds) { breed in
+                NavigationLink(destination: BreedDetailView(viewModel: BreedDetailViewModel(id: breed.id))) {
+                    BreedListItemView(breed: breed)
                 }
-                .padding(16)
             }
         }
+        .padding(16)
+        .navigationTitle("Breeds list").font(.title).foregroundColor(.black)
     }
 }

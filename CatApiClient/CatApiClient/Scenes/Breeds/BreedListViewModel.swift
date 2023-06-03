@@ -7,52 +7,43 @@
 
 import Foundation
 
-struct Response<T: Decodable>: Decodable {
-    
-    struct Info: Decodable {
-        let weight: String
-        let count: Int
-        let next: String?
-        let previous: String?
-    }
-    
-    let info: Info
-    let results: T
-}
-
 @MainActor final class BreedListViewModel: ObservableObject {
     
     enum State {
         case initial
         case loading
-        case fetched(breedImages: [BreedImage])
+        case fetched(loadingMore: Bool)
         case failed
     }
     
+    @Injected private var apiManager: APIManaging
+    
+    @Published var breeds: [Breed] = []
     @Published var state: State = .initial
     
-    func fetch() async {
+    func load() async {
         state = .loading
-        
-        let url = Constants.baseAPIUrl
+        await fetch()
+    }
+    
+    func fetch() async {
         
         do {
-            let (data, _) = try await URLSession.shared.data(from: url)
+            let endpoint = BreedEndpoint.getBreeds
+            let response: [Breed] = try await apiManager.request(endpoint: endpoint)
+            debugPrint(response)
             
-            // Print the raw JSON response
-            if let jsonString = String(data: data, encoding: .utf8) {
-                print(jsonString)
-            }
+            breeds = response
             
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let breedImages = try decoder.decode([BreedImage].self, from: data)
-            
-            
-            state = .fetched(breedImages: breedImages)
-            
+            state = .fetched(loadingMore: false)
         } catch {
-            print("Error: \(error)")
+            if let error = error as? URLError, error.code == .cancelled {
+                Logger.log("URL request was cancelled: ", .info)
+                state = .fetched(loadingMore: false)
+                
+                return
+            }
+            debugPrint(error)
             state = .failed
         }
     }

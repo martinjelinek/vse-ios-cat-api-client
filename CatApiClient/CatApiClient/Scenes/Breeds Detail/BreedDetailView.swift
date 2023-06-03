@@ -19,17 +19,21 @@ struct BreedDetailView: View {
                     case .initial, .loading:
                         ProgressView()
                     case .fetched:
-                        if let breedImage = viewModel.breed {
-                            makeImage(url: breedImage.url)
-                            makeInfo(breedImage: breedImage)
+                        if let breed = viewModel.breed {
+                            if let referenceImageId = breed.referenceImageId {
+                                makeImage(url: breed.getBreedImageURL(imageID: referenceImageId))
+                            }
+                            makeInfo(breed: breed)
                         }
                     case .failed:
                         Text("Something went wrong")
                     }
-
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(16)
+                .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
             }
-            .padding(16)
         }
         .navigationTitle("")
         .onFirstAppear {
@@ -53,14 +57,34 @@ private extension BreedDetailView {
         .frame(maxWidth: .infinity)
     }
     
-    func makeInfo(breedImage: BreedImage) -> some View {
+    func makeInfo(breed: Breed) -> some View {
         VStack {
-            Text(breedImage.id)
+            Text(breed.id)
                 .font(.title)
-            Text(breedImage.id)
+            Text(breed.id)
                 .font(.subheadline)
                 .foregroundColor(.gray)
             Spacer()
+            if let adaptibility = breed.adaptability {
+                makeProgressBarView(title: "Adaptibility", value: adaptibility)
+            }
         }
     }
+    
+    func makeProgressBarView(title: String, value: Int) -> some View {
+        VStack {
+        Text(title)
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                Rectangle()
+                    .frame(width: geometry.size.width, height: 10)
+                    .opacity(0.3)
+                    .foregroundColor(.gray)
+                Rectangle()
+                    .frame(width: CGFloat(value / 5) * geometry.size.width, height: 10)
+                    .foregroundColor(.blue)
+            }
+        }
+    }
+}
 }
