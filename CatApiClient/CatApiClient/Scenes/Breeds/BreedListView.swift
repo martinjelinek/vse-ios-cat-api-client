@@ -39,7 +39,7 @@ private extension BreedListView {
         LazyVStack {
             ForEach(viewModel.breeds) { breed in
                 NavigationLink(destination: BreedDetailView(viewModel: BreedDetailViewModel(id: breed.id))) {
-                    BreedListItemView(breed: breed)
+                    BreedListItemView(breed: breed, viewModel: BreedImageViewModel())
                 }
             }
         }

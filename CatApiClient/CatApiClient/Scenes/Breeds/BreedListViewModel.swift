@@ -12,13 +12,14 @@ import Foundation
     enum State {
         case initial
         case loading
-        case fetched(loadingMore: Bool)
+        case fetched
         case failed
     }
     
     @Injected private var apiManager: APIManaging
     
     @Published var breeds: [Breed] = []
+    @Published var breedImages: [(String?, URL?)] = []
     @Published var state: State = .initial
     
     func load() async {
@@ -26,20 +27,18 @@ import Foundation
         await fetch()
     }
     
-    func fetch() async {
+    private func fetch() async {
         
         do {
             let endpoint = BreedEndpoint.getBreeds
             let response: [Breed] = try await apiManager.request(endpoint: endpoint)
             debugPrint(response)
-            
             breeds = response
-            
-            state = .fetched(loadingMore: false)
+            state = .fetched
         } catch {
             if let error = error as? URLError, error.code == .cancelled {
                 Logger.log("URL request was cancelled: ", .info)
-                state = .fetched(loadingMore: false)
+                state = .fetched
                 
                 return
             }

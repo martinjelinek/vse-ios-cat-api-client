@@ -21,7 +21,7 @@ struct BreedDetailView: View {
                     case .fetched:
                         if let breed = viewModel.breed {
                             if let referenceImageId = breed.referenceImageId {
-                                makeImage(url: breed.getBreedImageURL(imageID: referenceImageId))
+//                                makeImage(url: breed.getBreedImageURL(imageID: referenceImageId))
                             }
                             makeInfo(breed: breed)
                         }

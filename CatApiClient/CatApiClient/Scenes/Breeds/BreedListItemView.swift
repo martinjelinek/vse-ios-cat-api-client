@@ -10,14 +10,23 @@ import SwiftUI
 struct BreedListItemView: View {
     let breed: Breed
     
+    @StateObject var viewModel: BreedImageViewModel
+    
     var body: some View {
         VStack {
             Text(breed.name)
                 .font(.title)
                 .foregroundColor(.black)
             // TODO fetch image
-            if let referenceImageId = breed.referenceImageId {
-                makeImage(url: breed.getBreedImageURL(imageID: referenceImageId))
+            switch viewModel.state {
+            case .initial, .loading:
+                ProgressView()
+            case .fetched:
+                if let image = viewModel.image {
+                    makeImage(imageURL: URL(string: image.url)!)
+                }
+            case .failed:
+                Text("No image for this catto")
             }
             Text(breed.description ?? "")
                 .font(.subheadline)
@@ -30,12 +39,17 @@ struct BreedListItemView: View {
         .padding(16)
         .background(.white)
         .clipShape(RoundedRectangle(cornerRadius: 8))
+        .onFirstAppear {
+            Task {
+                await viewModel.load(imageId: breed.referenceImageId)
+            }
+        }
     }
 }
 
 private extension BreedListItemView {
-    func makeImage(url: URL?) -> some View {
-        AsyncImage(url: url) { image in
+    func makeImage(imageURL: URL) -> some View {
+        AsyncImage(url: imageURL) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)

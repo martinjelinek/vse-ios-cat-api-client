@@ -68,11 +68,7 @@ struct Favourite: Decodable {}
 extension Breed: Identifiable {}
 
 extension Breed {
-    func getBreedImageURL(imageID: String) -> URL {
-//        let url = Constants.baseAPIUrl.appendingPathComponent(Constants.APIUrlImagesAppend).appendingPathComponent(imageID.replacingOccurrences(of: " ", with: ""))
-//        debugPrint("Url is ", url)
-        return URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1920px-Cat_August_2010-4.jpg")!
-    }
+    
 }
 
 // MARK: - Debug
