@@ -13,8 +13,22 @@ struct Breed: Decodable {
         case cfaUrl = "cfa_url"
         case vetstreetUrl = "vetstreet_url"
         case vcahospitalsUrl = "vcahospitals_url"
-        case temperament, origin, countryCodes, countryCode, description, lifeSpan, indoor, lap, altNames, adaptability, affectionLevel, childFriendly, dogFriendly, energyLevel, grooming, healthIssues, intelligence, sheddingLevel, socialNeeds, strangerFriendly, vocalisation, experimental, hairless, natural, rare, rex, suppressedTail, shortLegs, wikipediaUrl, hypoallergenic
+        case wikipediaUrl = "wikipedia_url"
+        case lifeSpan = "life_span"
+        case countryCodes = "country_codes"
+        case countryCode = "country_code"
+        case affectionLevel = "affection_level"
+        case childFriendly = "child_friendly"
+        case dogFriendly = "dogFriendly"
+        case energyLevel = "energy_level"
+        case healthIssues = "health_issues"
+        case sheddingLevel = "sheddingLevel"
+        case socialNeeds = "social_needs"
+        case strangerFriendly = "stranger_friendly"
+        case suppressedTail = "suppressed_tail"
+        case shortLegs = "short_legs"
         case referenceImageId = "reference_image_id"
+        case temperament, origin, description, indoor, lap, altNames, adaptability, grooming, intelligence, vocalisation, experimental, hairless, natural, rare, rex, hypoallergenic
     }
     
     struct Weight: Decodable {

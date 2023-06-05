@@ -124,12 +124,14 @@ private extension BreedDetailView {
             }
             Spacer()
             if let lifeSpan = breed.lifeSpan {
-                makeInfoRow(title: "Life span: ", value: lifeSpan)
+                makeInfoRow(title: "Life span: ", value: "\(lifeSpan) years")
             }
             Spacer()
             if let temperament = breed.temperament {
                 makeInfoRow(title: "Temperament: ", value: temperament)
             }
+            Spacer()
+            makeInfoRow(title: "Weight: ", value: "\(breed.weight.metric) kg")
         }
         .padding(16)
     }
