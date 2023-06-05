@@ -17,7 +17,6 @@
 		8535F0C42A256C6900CCD077 /* CatApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0C32A256C6900CCD077 /* CatApiClientTests.swift */; };
 		8535F0CE2A256C6900CCD077 /* CatApiClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0CD2A256C6900CCD077 /* CatApiClientUITests.swift */; };
 		8535F0D02A256C6900CCD077 /* CatApiClientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0CF2A256C6900CCD077 /* CatApiClientUITestsLaunchTests.swift */; };
-		8535F0E92A26B39300CCD077 /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0E82A26B39300CCD077 /* Color+App.swift */; };
 		8535F0EB2A26B4A500CCD077 /* BreedListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0EA2A26B4A500CCD077 /* BreedListItemView.swift */; };
 		8535F0EF2A26B51A00CCD077 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0EE2A26B51A00CCD077 /* Breed.swift */; };
 		8535F0F32A26C83A00CCD077 /* BackgroudGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535F0F22A26C83A00CCD077 /* BackgroudGradientView.swift */; };
@@ -36,6 +35,10 @@
 		85DEDD042A2AC200002E56B8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDD032A2AC200002E56B8 /* Logger.swift */; };
 		85DEDD062A2AD35A002E56B8 /* BreedImageEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDD052A2AD35A002E56B8 /* BreedImageEndpoint.swift */; };
 		85DEDD092A2AE0FD002E56B8 /* BreedImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDD082A2AE0FD002E56B8 /* BreedImagesViewModel.swift */; };
+		85DEDD0B2A2D55E7002E56B8 /* ValueDisplayingProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDD0A2A2D55E7002E56B8 /* ValueDisplayingProgressBarView.swift */; };
+		85DEDD0D2A2D6287002E56B8 /* CattoProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDD0C2A2D6287002E56B8 /* CattoProgressView.swift */; };
+		85DEDD0F2A2D6AA2002E56B8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDD0E2A2D6AA2002E56B8 /* WebView.swift */; };
+		85DEDD112A2D734D002E56B8 /* ErrorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DEDD102A2D734D002E56B8 /* ErrorTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +73,6 @@
 		8535F0C92A256C6900CCD077 /* CatApiClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatApiClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8535F0CD2A256C6900CCD077 /* CatApiClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatApiClientUITests.swift; sourceTree = "<group>"; };
 		8535F0CF2A256C6900CCD077 /* CatApiClientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatApiClientUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8535F0E82A26B39300CCD077 /* Color+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
 		8535F0EA2A26B4A500CCD077 /* BreedListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListItemView.swift; sourceTree = "<group>"; };
 		8535F0EE2A26B51A00CCD077 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 		8535F0F22A26C83A00CCD077 /* BackgroudGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroudGradientView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,10 @@
 		85DEDD032A2AC200002E56B8 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		85DEDD052A2AD35A002E56B8 /* BreedImageEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageEndpoint.swift; sourceTree = "<group>"; };
 		85DEDD082A2AE0FD002E56B8 /* BreedImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImagesViewModel.swift; sourceTree = "<group>"; };
+		85DEDD0A2A2D55E7002E56B8 /* ValueDisplayingProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueDisplayingProgressBarView.swift; sourceTree = "<group>"; };
+		85DEDD0C2A2D6287002E56B8 /* CattoProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CattoProgressView.swift; sourceTree = "<group>"; };
+		85DEDD0E2A2D6AA2002E56B8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		85DEDD102A2D734D002E56B8 /* ErrorTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +149,6 @@
 				85DEDCEC2A298B5B002E56B8 /* API */,
 				85DEDCE42A2959CE002E56B8 /* Utils */,
 				8535F0EC2A26B4FE00CCD077 /* Model */,
-				8535F0E72A26B37700CCD077 /* Styles */,
 				8535F0E42A26A26900CCD077 /* Views */,
 				8535F0E02A257C5900CCD077 /* Resources */,
 				8535F0DD2A257A1E00CCD077 /* Scenes */,
@@ -210,16 +215,12 @@
 			isa = PBXGroup;
 			children = (
 				8535F0F22A26C83A00CCD077 /* BackgroudGradientView.swift */,
+				85DEDD0A2A2D55E7002E56B8 /* ValueDisplayingProgressBarView.swift */,
+				85DEDD0C2A2D6287002E56B8 /* CattoProgressView.swift */,
+				85DEDD0E2A2D6AA2002E56B8 /* WebView.swift */,
+				85DEDD102A2D734D002E56B8 /* ErrorTextView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		8535F0E72A26B37700CCD077 /* Styles */ = {
-			isa = PBXGroup;
-			children = (
-				8535F0E82A26B39300CCD077 /* Color+App.swift */,
-			);
-			path = Styles;
 			sourceTree = "<group>";
 		};
 		8535F0EC2A26B4FE00CCD077 /* Model */ = {
@@ -440,17 +441,20 @@
 				85DEDCF82A299123002E56B8 /* HTTPHeader.swift in Sources */,
 				85DEDD092A2AE0FD002E56B8 /* BreedImagesViewModel.swift in Sources */,
 				8535F0B42A256C6500CCD077 /* ContentView.swift in Sources */,
+				85DEDD0D2A2D6287002E56B8 /* CattoProgressView.swift in Sources */,
 				8535F0EF2A26B51A00CCD077 /* Breed.swift in Sources */,
 				850643952A294B2800CD0412 /* BreedDetailView.swift in Sources */,
 				85DEDCE82A2962D2002E56B8 /* BreedDetailViewModel.swift in Sources */,
 				8535F0EB2A26B4A500CCD077 /* BreedListItemView.swift in Sources */,
+				85DEDD112A2D734D002E56B8 /* ErrorTextView.swift in Sources */,
 				85DEDCEE2A298B7C002E56B8 /* APIManager.swift in Sources */,
-				8535F0E92A26B39300CCD077 /* Color+App.swift in Sources */,
 				85DEDD042A2AC200002E56B8 /* Logger.swift in Sources */,
 				85DEDCF22A2990FF002E56B8 /* APIError.swift in Sources */,
 				850643972A294EC300CD0412 /* BreedListView.swift in Sources */,
 				85DEDCF42A299108002E56B8 /* Endpoint.swift in Sources */,
 				85DEDCFD2A2A78BC002E56B8 /* DIContainer.swift in Sources */,
+				85DEDD0B2A2D55E7002E56B8 /* ValueDisplayingProgressBarView.swift in Sources */,
+				85DEDD0F2A2D6AA2002E56B8 /* WebView.swift in Sources */,
 				85DEDCE62A295A01002E56B8 /* OnFirstAppearViewModifier.swift in Sources */,
 				85DEDCFB2A2A68DF002E56B8 /* BreedEndpoint.swift in Sources */,
 				85DEDCFF2A2A8884002E56B8 /* BreedImage.swift in Sources */,

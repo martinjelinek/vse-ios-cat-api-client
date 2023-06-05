@@ -113,9 +113,5 @@ extension Breed {
         hypoallergenic: 0,
         referenceImageId: "0XYvRd7oD"
     )
-    
-    
-    
-    //    static let mockedBreeds: [BreedImage] = [.mock]
 }
 #endif

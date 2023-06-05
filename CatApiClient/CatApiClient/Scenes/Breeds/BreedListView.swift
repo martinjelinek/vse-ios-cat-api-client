@@ -38,8 +38,8 @@ private extension BreedListView {
     func makeBreedList() -> some View {
         LazyVStack {
             ForEach(viewModel.breeds) { breed in
-                NavigationLink(destination: BreedDetailView(viewModel: BreedDetailViewModel(id: breed.id))) {
-                    BreedListItemView(breed: breed, viewModel: BreedImageViewModel())
+                NavigationLink(destination: BreedDetailView(viewModel: BreedDetailViewModel(id: breed.id), imageViewModel: BreedImageViewModel())) {
+                    BreedListItemView(breed: breed, imageViewModel: BreedImageViewModel())
                 }
             }
         }

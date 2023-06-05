@@ -9,6 +9,12 @@ import SwiftUI
 
 struct BreedDetailView: View {
     @StateObject var viewModel: BreedDetailViewModel
+    @StateObject var imageViewModel: BreedImageViewModel
+    
+    @State var isExpanded = false
+    @State var isWikiPresent = false
+    @State var isWikiToggled = false
+    
     
     var body: some View {
         ZStack {
@@ -17,28 +23,77 @@ struct BreedDetailView: View {
                 VStack {
                     switch viewModel.state {
                     case .initial, .loading:
-                        ProgressView()
+                        CattoProgressView()
                     case .fetched:
                         if let breed = viewModel.breed {
-                            if let referenceImageId = breed.referenceImageId {
-//                                makeImage(url: breed.getBreedImageURL(imageID: referenceImageId))
+                            switch imageViewModel.state {
+                            case .initial, .loading:
+                                CattoProgressView()
+                            case .fetched:
+                                if let image = imageViewModel.image {
+                                    makeImage(url: URL(string: image.url))
+                                }
+                            case .failed:
+                                ErrorTextView(error: "No image for this catto")
                             }
                             makeInfo(breed: breed)
+                            Button(action: {
+                                isExpanded.toggle()
+                            }) {
+                                if isExpanded {
+                                    HStack {
+                                        Text("Show less").foregroundColor(.blue)
+                                        Image(systemName: "chevron.up")
+                                    }
+                                } else {
+                                    HStack {
+                                        Text("Show more").foregroundColor(.blue)
+                                        Image(systemName: "chevron.down")
+                                    }
+                                }
+                            }
+                            .padding(16)
+                            if (isExpanded) {
+                                if let properties = viewModel.properties {
+                                    makeValuesSegment(properties: properties)
+                                }
+                            }
                         }
                     case .failed:
-                        Text("Something went wrong")
+                        ErrorTextView(error: "Something went wrong")
                     }
+                    Spacer().frame(height: 16)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(16)
                 .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
+                .padding(16)
+            }
+            .navigationBarTitle(viewModel.breed?.name ?? "")
+        }
+        .toolbar {
+            if (isWikiPresent) {
+                ToolbarItem {
+                    Button(action: {
+                        isWikiToggled = !isWikiToggled
+                    }) {
+                        Text("Wiki")
+                    }
+                }
             }
         }
-        .navigationTitle("")
+        .sheet(isPresented: $isWikiToggled) {
+            if let urlString = viewModel.breed?.wikipediaUrl {
+                WebView(url: URL(string: urlString)!)
+            }
+        }
         .onFirstAppear {
             Task {
-                await viewModel.fetch()
+                await viewModel.load()
+                await imageViewModel.load(imageId: viewModel.breed?.referenceImageId)
+                if (viewModel.breed?.wikipediaUrl) != nil {
+                    Task { isWikiPresent.toggle() }
+                }
             }
         }
     }
@@ -55,36 +110,44 @@ private extension BreedDetailView {
             ProgressView()
         }
         .frame(maxWidth: .infinity)
+        .padding(16)
     }
     
     func makeInfo(breed: Breed) -> some View {
-        VStack {
-            Text(breed.id)
-                .font(.title)
-            Text(breed.id)
-                .font(.subheadline)
-                .foregroundColor(.gray)
-            Spacer()
-            if let adaptibility = breed.adaptability {
-                makeProgressBarView(title: "Adaptibility", value: adaptibility)
+        LazyVStack {
+            if let desc = breed.description {
+                Text(desc).font(.body)
             }
+            Spacer().frame(height: 20)
+            if let origin = breed.origin {
+                makeInfoRow(title: "Origin: ", value: origin)
+            }
+            Spacer()
+            if let lifeSpan = breed.lifeSpan {
+                makeInfoRow(title: "Life span: ", value: lifeSpan)
+            }
+            Spacer()
+            if let temperament = breed.temperament {
+                makeInfoRow(title: "Temperament: ", value: temperament)
+            }
+        }
+        .padding(16)
+    }
+    
+    func makeInfoRow(title: String, value: String) -> some View {
+        VStack {
+            Text(title).font(.subheadline)
+            Text(value).font(.caption)
         }
     }
     
-    func makeProgressBarView(title: String, value: Int) -> some View {
-        VStack {
-        Text(title)
-        GeometryReader { geometry in
-            ZStack(alignment: .leading) {
-                Rectangle()
-                    .frame(width: geometry.size.width, height: 10)
-                    .opacity(0.3)
-                    .foregroundColor(.gray)
-                Rectangle()
-                    .frame(width: CGFloat(value / 5) * geometry.size.width, height: 10)
-                    .foregroundColor(.blue)
+    func makeValuesSegment(properties: [Property]) -> some View {
+        LazyVStack {
+            ForEach(properties, id: \.title) { property in
+                if let value = property.value {
+                    ValueDisplayingProgressBarView(title: property.title, value: value)
+                }
             }
         }
     }
-}
 }

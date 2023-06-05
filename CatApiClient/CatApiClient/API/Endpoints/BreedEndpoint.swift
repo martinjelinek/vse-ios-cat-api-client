@@ -13,20 +13,16 @@ case getBreedById(breedId: String?)
     
     var path: String {
         switch self {
-        case .getBreeds, .getBreedById:
+        case .getBreeds:
             return "breeds"
+        case .getBreedById(breedId: let breedId):
+            return "breeds/\(String(describing: breedId!))"
         }
     }
     
     var urlParams: [String : String] {
         switch self {
-        case .getBreedById(let breedId):
-            if let id = breedId {
-                return ["breedId": id]
-            } else {
-                return [:]
-            }
-        case .getBreeds:
+        case .getBreeds, .getBreedById:
             return [:]
         }
     }

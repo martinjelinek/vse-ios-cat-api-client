@@ -10,29 +10,30 @@ import SwiftUI
 struct BreedListItemView: View {
     let breed: Breed
     
-    @StateObject var viewModel: BreedImageViewModel
+    @StateObject var imageViewModel: BreedImageViewModel
     
     var body: some View {
         VStack {
             Text(breed.name)
                 .font(.title)
                 .foregroundColor(.black)
-            // TODO fetch image
-            switch viewModel.state {
-            case .initial, .loading:
-                ProgressView()
-            case .fetched:
-                if let image = viewModel.image {
-                    makeImage(imageURL: URL(string: image.url)!)
+            HStack {
+                switch imageViewModel.state {
+                case .initial, .loading:
+                    CattoProgressView()
+                case .fetched:
+                    if let image = imageViewModel.image {
+                        makeImage(imageURL: URL(string: image.url)!)
+                    }
+                case .failed:
+                    ErrorTextView(error:"No image for this catto")
                 }
-            case .failed:
-                Text("No image for this catto")
+                Text(breed.description ?? "")
+                    .font(.body)
+                    .foregroundColor(.gray)
+                    .lineLimit(5)
+                    .truncationMode(.tail)
             }
-            Text(breed.description ?? "")
-                .font(.subheadline)
-                .foregroundColor(.gray)
-                .lineLimit(5) // Limits the text to a single line
-                .truncationMode(.tail)
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -41,7 +42,7 @@ struct BreedListItemView: View {
         .clipShape(RoundedRectangle(cornerRadius: 8))
         .onFirstAppear {
             Task {
-                await viewModel.load(imageId: breed.referenceImageId)
+                await imageViewModel.load(imageId: breed.referenceImageId)
             }
         }
     }
@@ -55,8 +56,8 @@ private extension BreedListItemView {
                 .aspectRatio(contentMode: .fit)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
         } placeholder: {
-            ProgressView()
+            CattoProgressView()
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: 120)
     }
 }
