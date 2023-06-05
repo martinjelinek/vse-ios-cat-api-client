@@ -28,7 +28,7 @@ struct BreedListItemView: View {
                 case .failed:
                     ErrorTextView(error:"No image for this catto")
                 }
-                Text(breed.description ?? "")
+                Text(breed.temperament ?? "")
                     .font(.body)
                     .foregroundColor(.gray)
                     .lineLimit(5)
